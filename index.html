@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qual mês é?</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+        body{
+            background: linear-gradient(to right, #8FA8FF, #B68DFF, #FC8DC5);
+           
+            font-family: "Tangerine", cursive;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            
+        }
+        #res{
+            
+           color:  #ffffff;
+        }
+        h1{
+            background: linear-gradient(to right,  #ffffff,  #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 60px;
+            background-clip: text;
+           
+            }
+        #res{
+           
+            font-size: 30px;
+        }
+        #tex1{
+            font-family: "Tangerine", cursive;
+            font-size: 28px;
+            border-radius: 5px;
+
+        }
+        #res2{
+            font-size: 30px;
+            color:  #ffffff;
+        }
+        #tex2{
+            font-family: "Tangerine", cursive;
+            font-size: 28px;
+            border-radius: 5px;
+        }
+        .mes{
+           width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.171);
+           color: #ffff;
+        }
+        .hora{
+           width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.164);
+           color: #ffff;
+        }
+        .mes1{
+           width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.199);
+           color: #ffff;
+        }
+        .hora1{
+           width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        #tex1{
+           
+           border-color: #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.089);
+           color: #ffff;
+        }
+        input::placeholder{
+            color: #ffff;
+        }
+        #tex2{
+           
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.089);
+           color: #ffff;
+        }
+        .hh1{
+            width: 650px;
+            
+            margin: 0 auto;
+            border: 2px solid #ffffff; /* Espessura, estilo e cor da borda */
+            border-radius: 20px;
+            position: relative; /* Necessário para aplicar o efeito corretamente */
+            background: rgba(255, 255, 255, 0.247); /* Cor de fundo semitransparente */
+            backdrop-filter: blur(10px); /* Aplica o desfoque ao fundo */
+            padding: 20px;
+            border-radius: 10px; /* Opcional, para bordas arredondadas */
+            justify-content: center; /* Centraliza na horizontal*/
+            place-items: center; /* Centraliza o conteúdo tanto vertical quanto horizontal */
+            box-sizing: border-box;
+            text-align: center;
+            
+        }
+        @media (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+    }
+    
+    #res, .resultado {
+        font-size: 25px;
+    }
+
+    .hh1 {
+        width: 90%;
+        padding: 15px;
+    }
+
+    /* Ajuste para botões e inputs menores */
+    input, .mes, .hora, .dolar, .conver1, .con1, .conver2, .con2, .conver3, 
+    .con3, .conver4, .con4, .conver5, .con5, .conver6, .con6, .conver7, 
+    .con7, .conver8, .con8, .conver9, .con9, .conver10, .con10, .conver11, 
+    .con11, .conver12, .con12 {
+        max-width: 60px;
+        height: 30px;
+    }
+}
+
+/* Ajustes adicionais para telas ainda menores */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    #res, .resultado {
+        font-size: 20px;
+    }
+
+    .hh1 {
+        padding: 10px;
+    }
+
+    input, .mes, .hora, .dolar, .conver1, .con1, .conver2, .con2, .conver3, 
+    .con3, .conver4, .con4, .conver5, .con5, .conver6, .con6, .conver7, 
+    .con7, .conver8, .con8, .conver9, .con9, .conver10, .con10, .conver11, 
+    .con11, .conver12, .con12 {
+        max-width: 50px;
+        height: 28px;
+    }
+    
+    /* Ajuste de padding e margem para evitar cortes */
+    .contener {
+        padding: 5px;
+    }
+}
+        #tex3{
+            font-family: "Tangerine", cursive;
+            font-size: 28px;
+            border-radius: 5px;
+            
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.089);
+           color: #ffff;
+        }
+        p{
+            font-family: "Tangerine", cursive;
+            font-size: 28px;
+            border-radius: 5px;
+            color: #ffffff;
+        }
+        .dolar{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        .Dolar{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        #res3{
+            color:  #ffffff;
+            font-size: 30px;
+        }
+        .conver1{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        .con1{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        #res4{
+            color:  #ffffff;
+            font-size: 30px;
+        }
+        #tex4{
+            font-family: "Tangerine", cursive;
+            font-size: 28px;
+            border-radius: 5px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.089);
+           color: #ffff;
+        }
+        .conver2{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        .con2{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        #res5{
+            color:  #ffffff;
+            font-size: 30px;
+        }
+        #tex5{
+            font-family: "Tangerine", cursive;
+            font-size: 28px;
+            border-radius: 5px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.089);
+           color: #ffff;
+        }
+        .contener{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+        }
+        .conver3{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        .con3{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        #res6{
+            color:  #ffffff;
+            font-size: 30px;
+        }
+        #tex6{
+            font-family: "Tangerine", cursive;
+            font-size: 28px;
+            border-radius: 5px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.089);
+           color: #ffff;
+        }
+        .conver4{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        .con4{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        #res7{
+            color:  #ffffff;
+            font-size: 30px;
+        }
+        #tex7{
+            font-family: "Tangerine", cursive;
+            font-size: 28px;
+            border-radius: 5px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.089);
+           color: #ffff;
+        }
+        .conver5{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        .con5{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        #res8{
+            color:  #ffffff;
+            font-size: 30px;
+        }
+        #tex8{
+            font-family: "Tangerine", cursive;
+            font-size: 28px;
+            border-radius: 5px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.089);
+           color: #ffff;
+        }
+        .conver6{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        .con6{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        #res9{
+            color:  #ffffff;
+            font-size: 30px;
+        }
+        #tex9{
+            font-family: "Tangerine", cursive;
+            font-size: 28px;
+            border-radius: 5px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.089);
+           color: #ffff;
+        }
+        .conver7{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        .con7{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        #res10{
+            color:  #ffffff;
+            font-size: 30px;
+        }
+        #tex10{
+            font-family: "Tangerine", cursive;
+            font-size: 28px;
+            border-radius: 5px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.089);
+           color: #ffff;
+        }
+        #tex11{
+            font-family: "Tangerine", cursive;
+            font-size: 28px;
+            border-radius: 5px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.089);
+           color: #ffff;
+        }
+        .conver8{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        .con8{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        #res11{
+            color:  #ffffff;
+            font-size: 30px;
+        }
+        #tex12{
+            font-family: "Tangerine", cursive;
+            font-size: 28px;
+            border-radius: 5px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.089);
+           color: #ffff;
+        }
+        #tex13{
+            font-family: "Tangerine", cursive;
+            font-size: 28px;
+            border-radius: 5px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.089);
+           color: #ffff;
+        }
+        .conver9{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        .con9{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        #res12{
+            color:  #ffffff;
+            font-size: 30px;
+        }
+        #tex14{
+            font-family: "Tangerine", cursive;
+            font-size: 28px;
+            border-radius: 5px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.089);
+           color: #ffff;
+        }
+        #tex15{
+            font-family: "Tangerine", cursive;
+            font-size: 28px;
+            border-radius: 5px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.089);
+           color: #ffff;
+        }
+        .conver10{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        .con10{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        #res13{
+            color:  #ffffff;
+            font-size: 30px;
+        }
+        #tex16{
+            font-family: "Tangerine", cursive;
+            font-size: 28px;
+            border-radius: 5px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.089);
+           color: #ffff;
+        }
+        #tex17{
+            font-family: "Tangerine", cursive;
+            font-size: 28px;
+            border-radius: 5px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.089);
+           color: #ffff;
+        }
+        .conver11{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        .con11{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        #res14{
+            color:  #ffffff;
+            font-size: 30px;
+        }
+        #tex18{
+            font-family: "Tangerine", cursive;
+            font-size: 28px;
+            border-radius: 5px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.089);
+           color: #ffff;
+        }
+        #tex19{
+            font-family: "Tangerine", cursive;
+            font-size: 28px;
+            border-radius: 5px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.089);
+           color: #ffff;
+        }
+        .conver12{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        .con12{
+            width: 78px;
+           height: 36px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.185);
+           color: #ffff;
+        }
+        #res15{
+            color:  #ffffff;
+            font-size: 30px;
+        }
+        #tex20{
+            font-family: "Tangerine", cursive;
+            font-size: 28px;
+            border-radius: 5px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.089);
+           color: #ffff;
+        }
+        #tex21{
+            font-family: "Tangerine", cursive;
+            font-size: 28px;
+            border-radius: 5px;
+           border-color:  #80f580;
+           border-radius: 10px;
+           background-color: rgba(121, 121, 117, 0.089);
+           color: #ffff;
+        }
+        
+        
+        
+
+    </style>
+</head>
+<body>
+    <div class="contener">
+    <div class="hh1">
+    <h1>Digite o numero do mes...</h1>
+    
+    <input type="number" name="tex1" id="tex1" placeholder="Digite aqui..."> <input class="mes" type="button" onclick="verifica()" value="verificar"> <button class="mes1" onclick="limpar()">Limpar</button>
+    <div id="res">
+
+    
+    </div>
+    
+    <h1>Converso de 24h para 12h...</h1>
+    
+     <input type="number" name="tex2" id="tex2" placeholder="Digite aqui..."> <input class="hora" type="button" onclick="revelar()" value="revelar"> <button class="hora1" onclick="Limpar()">Limpar</button>
+     <div id="res2">
+
+     </div>
+     <h1>Converso de Dólar para reais.</h1>
+     <p>Dólar:</p> <input type="number" name="tex3" id="tex3" placeholder="Digite aqui em dólar..."> <input class="Dolar" type="button" onclick="calcular()" value="calcular"> <button class="dolar" onclick="LIpar()">Limpar</button>
+     <div id="res3">
+
+     </div>
+     <h1>Converso de M/S em K/H.</h1>
+     <input type="number" name="tex4" id="tex4" placeholder="Digite aqui em metros..."> <input class="conver1" type="button" onclick="conversao()" value="conversão"> <button class="con1" onclick="LIMpar()">Limpar</button>
+     <div id="res4">
+
+     </div>
+     <h1>Converso de K/H em M/S.</h1>
+     <input type="number" name="tex5" id="tex5" placeholder="Digite aqui em quilômetros..."> <input class="conver2" type="button" onclick="conversao2()" value="conversão"> <button class="con2" onclick="LIMPar()">Limpar</button>
+     <div id="res5">
+
+     </div>
+      <h1>Conversão de Libras para KG.</h1>
+      <input type="number" name="tex6" id="tex6" placeholder="Digite aqui em libras..."> <input class="conver3" type="button" onclick="conversao3()" value="conversão"> <button class="con3" onclick="LIMPAr()">Limpar</button>
+      <div id="res6">
+
+      </div>
+      <h1>Conversão de Nós em K/H.</h1>
+      <input type="number" name="tex7" id="tex7" placeholder="Digite em nós..."> <input class="conver4" type="button" onclick="conversao4()" value="conversão"> <button class="con4" onclick="LIMPAR()">Limpar</button>
+      <div id="res7">
+
+      </div>
+      <h1>Conversão pés para metros.</h1>
+      <input type="number" name="tex8" id="tex8" placeholder="Digite em pés..."> <input class="conver5" type="button" onclick="conversao5()" value="conversão"> <button class="con5" onclick="LIMPAR1()">Limpar</button>
+      <div id="res8">
+
+      </div>
+      <h1>Conversão de Fahrenheite para Grau Celsius.</h1>
+      <input type="number" name="tex9" id="tex9" placeholder="Digite em fahrenheite... "> <input class="conver6" type="button" onclick="conversao6()" value="conversão"> <button class="con6" onclick="LIMPAR2()">Limpar</button>
+      <div id="res9">
+
+      </div>
+      <h1>Calcular o tempo.</h1>
+      <input type="number" name="tex10" id="tex10" placeholder="Digite a distancia... "> <input type="number" name="tex11" id="tex11" placeholder="Digite os km/h"> <input class="conver7" type="button" onclick="conversao7()" value="conversão"> <button class="con7" onclick="LIMPAR3()">Limpar</button>
+      <div id="res10">
+
+      </div>
+      <h1>Velocidade media.</h1>
+      <input type="number" name="tex12" id="tex12" placeholder="Digite a distancia... "> <input type="number" name="tex13" id="tex13" placeholder="Digite o tempo..."> <input class="conver8" type="button" onclick="conversao8()" value="conversão"> <button class="con8" onclick="LIMPAR4()">Limpar</button>
+      <div id="res11">
+
+      </div>
+      <h1>Distancia.</h1>
+      <input type="number" name="tex14" id="tex14" placeholder="Digite os km/h..."> <input type="number" name="tex15" id="tex15" placeholder="Digite o tempo..."> <input class="conver9" type="button" onclick="conversao9()" value="conversão"> <button class="con9" onclick="LIMPAR5()">Limpar</button>
+      <div id="res12">
+
+      </div>
+      <h1>Combustivo Necessário.</h1>
+      <input type="number" name="tex16" id="tex16" placeholder="Digite a distancia..."> <input type="number" name="tex17" id="tex17" placeholder="Digite os km/L"> <input class="conver10" type="button" onclick="conversao10()" value="conversão"> <button class="con10" onclick="LIMPAR6()">Limpar</button>
+      <div id="res13">
+
+      </div>
+      <h1>Custo da gasolina.</h1>
+      <input type="number" name="tex18" id="tex18" placeholder="Digite os litros..."> <input type="number" name="tex19" id="tex19" placeholder="Preço do combustivo"> <input class="conver11" type="button" onclick="conversao11()" value="conversão"> <button class="con11" onclick="LIMPAR7()">Limpar</button>
+      <div id="res14">
+
+      </div>
+      <h1>Consumo por Litros.</h1>
+      <input type="number" name="tex20" id="tex20" placeholder="Digite a distancia..."> <input type="number" name="tex21" id="tex21" placeholder="Litros consumidos"> <input class="conver12" type="button" onclick="conversao12()" value="conversão"> <button class="con12" onclick="LIMPAR8()">Limpar</button>
+      <div id="res15">
+
+      </div>
+     </div>
+     
+     </div>
+    <script>
+        function verifica(){
+            let a = window.document.getElementById('tex1').value 
+            let res = window.document.getElementById('res')
+            if(a == 1){
+            res.innerHTML = (`O mês ${a} é janeiro`)
+            } else if(a == 2){
+            res.innerHTML = (`O mês ${a} é fevereiro`)
+            } else if(a == 3){
+            res.innerHTML = (`O mês ${a} é março`)
+            } else if(a == 4){
+            res.innerHTML = (`O mês ${a} é abril`)
+            } else if(a == 5){
+            res.innerHTML = (`O mês ${a} é maio`)
+            } else if(a == 6){
+            res.innerHTML = (`O mês ${a} é junho`)
+            } else if(a == 7){
+            res.innerHTML = (`O mês ${a} é julho`)
+            } else if(a == 8){
+            res.innerHTML = (`O mês ${a} é agosto`)
+            } else if(a == 9){
+            res.innerHTML = (`O mês ${a} é setembro`)
+            } else if(a == 10){
+            res.innerHTML = (`O mês ${a} é outubro`)
+            } else if(a == 11){
+            res.innerHTML = (`O mês ${a} é novembro`)
+            } else if(a == 12){
+            res.innerHTML = (`O mês ${a} é dezembro`)
+            } else{
+            res.innerHTML = ('Não exiter esse mês')
+            }
+        }
+        function limpar(){
+            window.document.getElementById('res').innerHTML = ""
+            window.document.getElementById('tex1').value = "";
+        }
+        function revelar(){
+            let a = document.getElementById('tex2').value
+            let b = document.getElementById('res2')
+            if(a == 13){
+            b.innerHTML = ('É 1:00h')
+            } else if(a == 14){
+            b.innerHTML = ('São 2:00h')
+            } else if(a == 15){
+            b.innerHTML = ('São 3:00h')
+            } else if(a == 16){
+            b.innerHTML = ('São 4:00h')
+            } else if(a == 17){
+            b.innerHTML = ('São 5:00h')
+            } else if(a == 18){
+            b.innerHTML = ('Sâo 6:00h')
+            } else if(a == 19){
+            b.innerHTML = ('Sâo 7:00h')
+            } else if(a == 20){
+            b.innerHTML = ('Sâo 8:00h')
+            } else if(a == 21){
+            b.innerHTML = ('São 9:00h')
+            } else if(a == 22){
+            b.innerHTML = ('São 10:00h')
+            } else if(a == 23){
+            b.innerHTML = ('Sâo 11:00h')
+            } else{
+            b.innerHTML = ('Nâo encontrado.')
+            }
+        }
+        function Limpar(){
+            window.document.getElementById('res2').innerHTML = "";
+            window.document.getElementById('tex2').value = "";
+        }
+        async function calcular() {
+            // Pega o valor em dólares digitado pelo usuário
+            let valorEmDolar = parseFloat(document.getElementById('tex3').value);
+            
+            // Verifica se o valor é um número válido
+            if (isNaN(valorEmDolar) || valorEmDolar <= 0) {
+                document.getElementById('res3').textContent = "Por favor, insira um valor em dólares válido.";
+                return;
+            }
+            
+            try {
+                // Faz a requisição para a API da AwesomeAPI para pegar a taxa de câmbio
+                const resposta = await fetch('https://economia.awesomeapi.com.br/last/USD-BRL');
+                const dados = await resposta.json();
+                
+                // Obtém a taxa de câmbio atual do dólar para real
+                const taxaCambio = parseFloat(dados.USDBRL.bid);
+                
+                // Calcula o valor em reais
+                const valorEmReal = valorEmDolar * taxaCambio;
+                
+                // Exibe o resultado na página
+                document.getElementById('res3').textContent = 
+                    `$${valorEmDolar.toFixed(2)} dólares equivalem a R$${valorEmReal.toFixed(2)} reais`;
+                
+            } catch (erro) {
+                document.getElementById('res3').textContent = "Erro ao buscar a taxa de câmbio. Tente novamente mais tarde.";
+                console.error("Erro ao buscar a taxa de câmbio:", erro);
+            }
+        }
+        function LIpar(){
+            window.document.getElementById('res3').innerHTML = "";
+            window.document.getElementById('tex3').value = "";
+        }
+        function conversao(){
+            let a = window.document.getElementById('tex4').value
+            let b = window.document.getElementById('res4')
+            let c = 3.6
+            let s = a*c
+            b.innerHTML = (`O valor é ${s}k/h.`)
+        }
+        function LIMpar(){
+            window.document.getElementById('res4').innerHTML = "";
+            window.document.getElementById('tex4').value = "";
+        }
+        function conversao2(){
+            let a =  Number(document.getElementById('tex5').value)
+            let b = window.document.getElementById('res5')
+            let s = a/3.6
+            b.innerHTML = (`O valor é  ${s.toFixed(6)}m/s`)
+            
+        }
+        function LIMPar(){
+            window.document.getElementById('res5').innerHTML = "";
+            window.document.getElementById('tex5').value = "";
+        }
+        function conversao3(){
+            let a = window.document.getElementById('tex6').value
+            let b = window.document.getElementById('res6')
+            let c = 0.453592
+            let s = c*a
+            b.innerHTML = (`O valor é ${s.toFixed(6)}kg`)
+        }
+        function LIMPAr(){
+            window.document.getElementById('res6').innerHTML = "";
+            window.document.getElementById('tex6').value = "";
+        }
+        function conversao4(){
+            let a = window.document.getElementById('tex7').value
+            let b = window.document.getElementById('res7')
+            let c = 1.852
+            let s = a*c
+            b.innerHTML = (`O valor é ${s.toFixed(2)} k/h`)
+        }
+        function LIMPAR(){
+            window.document.getElementById('res7').innerHTML = "";
+            window.document.getElementById('tex7').value = "";
+        }
+        function conversao5(){
+            let a = window.document.getElementById('tex8').value
+            let b = window.document.getElementById('res8')
+            let c = 0.3048
+            let s = a*c
+            b.innerHTML = (`O valor é ${s.toFixed(2)} metros`)
+        }
+        function LIMPAR1(){
+            window.document.getElementById('res8').innerHTML = "";
+            window.document.getElementById('tex8').value = "";
+        }
+        function conversao6(){
+            let a = window.document.getElementById('tex9').value
+            let b = window.document.getElementById('res9')
+            let c = a-32
+            let s = c*5/9
+            b.innerHTML = (`O valor é ${s.toFixed(3)} Graus`)
+        }
+        function LIMPAR2(){
+            window.document.getElementById('res9').innerHTML = "";
+            window.document.getElementById('tex9').value = "";
+        }
+        function conversao7(){
+            let a1 = window.document.getElementById('tex10').value
+            let a2 = window.document.getElementById('tex11').value
+            let b = window.document.getElementById('res10')
+            let s = a1/a2
+            b.innerHTML = (`O valor é ${s.toFixed(2)} horas`)
+        }
+        function LIMPAR3(){
+            window.document.getElementById('res10').innerHTML = "";
+            window.document.getElementById('tex10').value = "";
+            window.document.getElementById('tex11').value = "";
+        }
+        function conversao8(){
+            let a1 = window.document.getElementById('tex12').value
+            let a2 = window.document.getElementById('tex13').value
+            let b = window.document.getElementById('res11')
+            let s = a1/a2
+            b.innerHTML = (`O valor é ${s.toFixed(2)} km/h`)
+        }
+        function LIMPAR4(){
+            window.document.getElementById('res11').innerHTML = "";
+            window.document.getElementById('tex12').value = "";
+            window.document.getElementById('tex13').value = "";
+        }
+        function conversao9(){
+            let a1 = window.document.getElementById('tex14').value
+            let a2 = window.document.getElementById('tex15').value
+            let b = window.document.getElementById('res12')
+            let s = a1*a2
+            b.innerHTML = (`O valor é ${s.toFixed(2)} km`)
+        }
+        function LIMPAR5(){
+            window.document.getElementById('res12').innerHTML = "";
+            window.document.getElementById('tex14').value = "";
+            window.document.getElementById('tex15').value = "";
+        }
+        function conversao10(){
+            let a1 = window.document.getElementById('tex16').value
+            let a2 = window.document.getElementById('tex17').value
+            let b = window.document.getElementById('res13')
+            let s = a1/a2
+            b.innerHTML = (`O valor é ${s.toFixed(2)} L`)
+        }
+        function LIMPAR6(){
+            window.document.getElementById('res13').innerHTML = "";
+            window.document.getElementById('tex16').value = "";
+            window.document.getElementById('tex17').value = "";
+        }
+        function conversao11(){
+            let a1 = window.document.getElementById('tex18').value
+            let a2 = window.document.getElementById('tex19').value
+            let b = window.document.getElementById('res14')
+            let s = a1*a2
+            b.innerHTML = (`O valor é ${s.toFixed(2)} reais`)
+        }
+        function LIMPAR7(){
+            window.document.getElementById('res14').innerHTML = "";
+            window.document.getElementById('tex18').value = "";
+            window.document.getElementById('tex19').value = "";
+        }
+        function conversao12(){
+            let a1 = window.document.getElementById('tex20').value
+            let a2 = window.document.getElementById('tex21').value
+            let b = window.document.getElementById('res15')
+            let s = a1/a2
+            b.innerHTML = (`O valor é ${s.toFixed(2)} km/L`)
+        }
+        function LIMPAR8(){
+            window.document.getElementById('res15').innerHTML = "";
+            window.document.getElementById('tex20').value = "";
+            window.document.getElementById('tex21').value = "";
+        }
+    </script>
+</body>
+</html>
